@@ -64,4 +64,10 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def director
+#    @tempmovie = Movie.find params[:id]
+#    @movies = Movie.find_all_by_director(@tempmovie.director)#Movie.find_all_by_director(@director)
+    @movies = Movie.find_same_director(params[:id])
+  end
+
 end
